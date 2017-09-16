@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HCI 590 - Assignment 1 - BMI Calculator">
+    <meta name="author" content="Casey Townsend">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HCI 590 - Assignment 1</title>
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/css/uikit.min.css" />
+
+    <!-- jQuery is required -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/js/uikit-icons.min.js"></script>
+
+    <!-- Vue.js -->
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div class="uk-container uk-container-small" id="app">
+        <form class="uk-form-stacked uk-margin-medium-top" uk-grid>
+            <fieldset class="uk-fieldset uk-width-1-2@m uk-align-center">
+                <legend class="uk-legend">BMI Calculator</legend>
+                <div class="uk-margin">
+                    <label class="uk-form-label">Weight</label>
+                    <input class="uk-input uk-form-width-small" type="text" v-model="weight"><span> lb</span>
+                </div>
+                <div class="uk-margin">
+                    <label class="uk-form-label">Height</label>
+                    <input class="uk-input uk-form-width-xsmall" type="text" v-model="feet"><span class="uk-margin-small-right"> ft</span>
+                    <input class="uk-input uk-form-width-xsmall" type="text" v-model="inches"><span> in</span>
+                </div>
+            </fieldset>
+            <fieldset class="uk-fieldset uk-width-1-2@m uk-align-center uk-margin-large-top">
+                <div class="uk-margin">
+                    <span class="uk-text-large uk-text-bold uk-text-center">{{ bmi }}</span>
+                </div>
+                <div class="uk-margin">
+                    <span class="uk-text-meta uk-text-center">{{ result }}</span>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+<script src="app.js"></script>
+
+</html>
