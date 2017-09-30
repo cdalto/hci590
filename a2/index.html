@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HCI 590 - Assignment 2 - BMI Calculator">
+    <meta name="author" content="Casey Townsend">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HCI 590 - Assignment 2</title>
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/css/uikit.min.css" />
+
+    <!-- jQuery is required -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/js/uikit-icons.min.js"></script>
+
+    <!-- Vue.js -->
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <h1 class="uk-heading-primary uk-text-center">Food Tracker</h1>
+
+    <div class="uk-section uk-section-muted">
+        <div class="uk-container uk-container-small">
+            <ul uk-accordion>
+                <li class="uk-close">
+                    <h3 class="uk-accordion-title">My Pantry</h3>
+                    <div class="uk-accordion-content">
+                        <div class="uk-margin-bottom">
+                            <button class="uk-button uk-button-primary uk-button-small">Add Food</button>
+                        </div>
+                        <div class="uk-grid-small uk-grid-match uk-child-width-1-4" uk-grid>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                                    <h3 class="uk-card-title">Frosted Flakes</h3>
+                                    <p>350 kcal</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                                    <h3 class="uk-card-title">Frosted Flakes</h3>
+                                    <p>350 kcal</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                                    <h3 class="uk-card-title">Frosted Flakes</h3>
+                                    <p>350 kcal</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                                    <h3 class="uk-card-title">Frosted Flakes</h3>
+                                    <p>350 kcal</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-container-small">
+            <div class="uk-grid-medium uk-child-width-expand@s uk-text-center" uk-grid>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">Item</div>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">Item</div>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">Item</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
