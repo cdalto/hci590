@@ -27,14 +27,14 @@ var app = new Vue({
     },
     computed: {
         totalCalories: function () {
-            var calories;
+            var calories = 0.0;
             var foodEatenToday = this.breakfast.concat(this.lunch).concat(this.dinner).concat(this.snacks);
 
             if (foodEatenToday.length === 0) {
-                calories = 0;
+                calories = 0.0;
             } else {
                 foodEatenToday.forEach(function (food) {
-                    calories = calories + (food.calories * food.servings);
+                    calories = parseFloat(calories) + (parseFloat(food.calories) * parseFloat(food.servings));
                 });
             }
 
