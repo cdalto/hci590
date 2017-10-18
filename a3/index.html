@@ -2,31 +2,41 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="HCI 590 - Assignment 3">
-  <meta name="author" content="Casey Townsend">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="description" content="HCI 590 - Assignment 3 - Weather Summary App">
+    <meta name="author" content="Casey Townsend">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>HCI 590 - Assignment 3</title>
+    <title>HCI 590 - Assignment 3</title>
 
-  <!-- UIkit CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/css/uikit.min.css" />
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/css/uikit.min.css" />
 
-  <!-- Vue.js -->
-  <script src="https://unpkg.com/vue"></script>
+    <!-- Vue.js -->
+    <script src="https://unpkg.com/vue"></script>
+
+    <!-- vue-chartjs -->
+    <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.full.min.js"></script>
 </head>
 
 <body>
-  <div id="app">
+    <div id="app">
+        <h1 class="uk-heading-primary uk-text-center uk-margin-top">Weather Summary</h1>
+        <search></search>
+        <line-chart></line-chart>
+    </div>
 
-  </div>
+    <script src="app.js"></script>
 
-  <!-- jQuery is required -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- jQuery is required -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <!-- UIkit JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/js/uikit.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/js/uikit-icons.min.js"></script>
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/js/uikit-icons.min.js"></script>
+
+    <!-- vue-chartjs -->
+    <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.full.min.js"></script>
 </body>
 
 </html>
