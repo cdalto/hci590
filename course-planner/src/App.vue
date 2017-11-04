@@ -14,11 +14,6 @@
           <a class="navbar-brand" href="#">Your HCI Course Planner</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-          <!--<ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>-->
 		  <ul class="nav navbar-nav navbar-right">
 			  <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi, Stuart&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
