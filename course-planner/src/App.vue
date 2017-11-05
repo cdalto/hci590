@@ -32,7 +32,9 @@
 <section>
 	<div class="container" id="coursePanel">
     <div class="col-md-3">
-      <CourseList/>
+      <div class="panel-group" id="accordion">
+        <CourseList/>
+      </div>
     </div>
     <div class="col-md-9">
       <CourseBucket/>
