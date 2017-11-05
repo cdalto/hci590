@@ -25,21 +25,32 @@
 			  </li>
 		   </ul>
       </div>
-        </div><!--/.nav-collapse -->
+    </div><!--/.nav-collapse -->
     </nav>
 	</header>
 
-    <HelloWorld/>
+<section>
+	<div class="container" id="coursePanel">
+    <div class="col-md-3">
+      <CourseList/>
+    </div>
+    <div class="col-md-9">
+      <CourseBucket/>
+    </div>
+	</div>
+</section>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import CourseList from "./components/CourseList";
+import CourseBucket from "./components/CourseBucket";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    CourseList,
+    CourseBucket
   }
 };
 </script>
