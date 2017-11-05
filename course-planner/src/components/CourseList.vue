@@ -28,13 +28,21 @@
 export default {
   name: "CourseList",
   data() {
-    return {
-    };
+    return {};
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.panel-group .panel,
+.panel {
+  border-radius: 0px;
+}
+.course_label {
+  padding: 5px 10px;
+  background: #124684;
+  color: #fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
 </style>
