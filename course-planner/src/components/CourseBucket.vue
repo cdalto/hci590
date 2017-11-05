@@ -28,7 +28,39 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.bucket_wrapper {
+  overflow: auto;
+}
+.course_bucket {
+  background: #f5f5f5;
+  overflow: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+.course_box {
+  background: #124684;
+  width: 175px;
+  margin-right: 20px;
+  display: inline-block;
+  padding: 15px;
+}
+.bucket_title {
+  color: #192f47;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.course_code {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+}
+.course_name {
+  color: #ffffff;
+  text-align: center;
+  font-size: 16px;
+}
 </style>
