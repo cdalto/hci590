@@ -53,7 +53,45 @@ export default {
   components: {
     CourseList,
     CourseBucket
+  },
+  data() {
+    return {
+      introductory_courses: [
+         {id:1, name: "Scripting for Interactive Systems", code: "IT 411", type: "Introductory", offered: ["Fall", "Winter", "Spring"], prereq:["None"]},
+         {id:2, name: "Website Design for HCI", code: "HCI 406", type: "Introductory", offered: ["Fall", "Winter", "Spring"], prereq: ["None"]},
+         {id:3, name: "Foundations of Digital Design", code: "HCI 402", type: "Introductory", offered: ["Fall", "Winter", "Spring"], prereq: ["None"]},
+         {id:4, name: "Statistics and Data Analysis", code: "IT 403", type: "Introductory", offered: ["Fall", "Winter", "Spring"], prereq: ["None"]}
+      ],
+      foundation_courses: [
+         {id:5, name: "Introduction to User-Centered Design", code: "HCI 440", type: "Foundation", offered: ["Fall", "Winter", "Spring"], prereq: ["None"]},
+         {id:6, name: "Introduction to User-Centered Development", code: "HCI 441", type: "Foundation", offered: ["Fall", "Winter", "Spring"], prereq: ["None"]},
+         {id:7, name: "Foundations of Human Computer Interaction", code: "HCI 450", type: "Foundation", offered: ["Fall", "Winter", "Spring"], prereq: ["IT 403"]},
+         {id:7, name: "Prototyping and Implemenation", code: "HCI 430", type: "Foundation", offered: ["Fall", "Winter", "Spring"], prereq: ["HCI 440"]}
+      ],
+      advanced_courses: [
+         {id:8, name: "Inquiry Methods and Use Analysis", code: "HCI 445", type: "Advanced", offered: ["Fall", "Winter", "Spring"], prereq: ["IT 403", "HCI 440"]},
+         {id:9, name: "IInteraction Design and Information Architecture", code: "HCI 454", type: "Advanced", offered: ["Fall", "Winter", "Spring"], prereq: ["HCI 406", "HCI 440"]},
+         {id:10, name: "Usability Evaluation Methods", code: "HCI 460", type: "Advanced", offered: ["Fall", "Winter", "Spring"], prereq: ["IT 403","HCI 440"]},
+         {id:11, name: "Digital Design", code: "HCI 470", type: "Advanced", offered: ["Fall", "Winter", "Spring"], prereq: ["HCI 402", "HCI 406"]},
+         {id:12, name: "Accessibility and Design for Diverse Users", code: "HCI 511", type: "Advanced", offered: ["Fall", "Winter", "Spring"], prereq: ["HCI 445", "HCI 460"]},
+         {id:13, name: "Global User Research", code: "HCI 514", type: "Advanced", offered: ["Fall", "Winter", "Spring"], prereq: ["HCI 445", "HCI 460"]},
+         {id:14, name: "Design Ethnography", code: "HCI 515", type: "Advanced", offered: ["Fall", "Winter", "Spring"], prereq: ["HCI 445", "HCI 454", "HCI 430"]}
+      ],
+      major_elective_courses: [
+         {id:15, name: "Designing for Content Management Systems", code: "HCI 421", type: "Major Elective", offered: ["Fall", "Winter", "Spring"], prereq: ["HCI 406"]},
+         {id:16, name: "Multimedia", code: "HCI 422", type: "Major Elective", offered: ["Fall", "Winter", "Spring"], prereq: ["HCI 440"]},
+         {id:17, name: "Information Visualization and Infographics", code: "HCI 512", type: "Major Elective", offered: ["Fall", "Winter", "Spring"], prereq: ["IT 403", "HCI 470"]},
+         {id:18, name: "Learner-Centered Design", code: "HCI 520", type: "Major Elective", offered: ["Fall", "Winter", "Spring"], prereq: ["IT 403", "HCI 440", "HCI 450"]},
+         {id:19, name: "UX Strategy and Web Analytics", code: "HCI 522", type: "Major Elective", offered: ["Fall", "Winter", "Spring"], prereq: ["IT 460"]},
+         {id:20, name: "Mobile Design", code: "HCI 530", type: "Major Elective", offered: ["Fall", "Winter", "Spring"], prereq: ["HCI 454"]},
+         {id:21, name: "Social Interaction Design", code: "HCI 553", type: "Major Elective", offered: ["Fall", "Winter", "Spring"], prereq: ["HCI 454"]},
+         {id:22, name: "User Experience Design Practicum", code: "HCI 580", type: "Major Elective", offered: ["Fall", "Winter", "Spring"], prereq: ["HCI 445","HCI 454"]},
+         {id:23, name: "Topics in Human-Computer Interaction", code: "HCI 590", type: "Major Elective", offered: ["Fall", "Winter", "Spring"], prereq: ["None"]},
+      ],
+      open_elective_courses: []
+    };
   }
+
 };
 </script>
 
