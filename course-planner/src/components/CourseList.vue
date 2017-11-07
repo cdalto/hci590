@@ -40,9 +40,10 @@ export default {
 }
 .course_label {
   padding: 5px 10px;
-  background: #124684;
+  background: #d0b892;
   color: #fff;
   border-radius: 5px;
   margin-bottom: 10px;
+  box-shadow: 5px 5px 10px #ccc;
 }
 </style>

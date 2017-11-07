@@ -289,7 +289,7 @@ export default {
 
 <style>
 .navbar {
-  background: #124684;
+  background: #90a9c7;
 }
 .navbar a,
 .navbar a:hover {
