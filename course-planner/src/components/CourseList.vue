@@ -34,15 +34,34 @@ export default {
 </script>
 
 <style scoped>
+.panel
+{
+	border: 0.5px solid #efefef;
+	box-shadow:none;
+}
 .panel-group .panel,
 .panel {
   border-radius: 0px;
 }
+.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body
+{
+	border-top:0.5px solid #eee;
+}
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+    border-top-color: #eee;
+}
+.panel-default>.panel-heading
+{
+	background-color: #f5f5f5;
+	background-image: none;
+	border-radius: 0px;
+}
 .course_label {
   padding: 5px 10px;
-  background: #124684;
+  background: #d0b892;
   color: #fff;
   border-radius: 5px;
   margin-bottom: 10px;
+  box-shadow: 5px 5px 10px #ccc;
 }
 </style>

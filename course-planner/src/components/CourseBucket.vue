@@ -36,15 +36,17 @@ export default {
   background: #f5f5f5;
   overflow: auto;
   padding: 20px;
-  border: 1px solid #ddd;
   margin-bottom: 20px;
+  border: 0.5px solid #eee;
 }
 .course_box {
-  background: #124684;
+  background: #d0b892;
   width: 175px;
   margin-right: 20px;
+  border-radius: 5px;
   display: inline-block;
   padding: 15px;
+  box-shadow: 10px 10px 15px #ccc;
 }
 .bucket_title {
   color: #192f47;
