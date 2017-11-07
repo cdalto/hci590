@@ -37,6 +37,7 @@ export default {
   overflow: auto;
   padding: 20px;
   margin-bottom: 20px;
+  border: 0.5px solid #eee;
 }
 .course_box {
   background: #d0b892;
