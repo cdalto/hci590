@@ -2,7 +2,7 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">
 	  	<h4 class="panel-title">
-				<a data-toggle="collapse" data-parent="#accordion" :href="getPanelHref">{{heading}}</a>
+				<a data-toggle="collapse" data-parent="#accordion" :href="getPanelHref"><span class="glyphicon glyphicon-chevron-right"></span>{{heading}}</a>
 	  	</h4>
 		</div>
 		<div :id="getPanelId" class="panel-collapse collapse">
@@ -66,5 +66,9 @@ export default {
   border-radius: 5px;
   margin-bottom: 10px;
   box-shadow: 5px 5px 10px #ccc;
+}
+.glyphicon-chevron-down, .glyphicon-chevron-right
+{
+	margin-right:5px;
 }
 </style>

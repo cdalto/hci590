@@ -41,6 +41,10 @@
       </div>
     </div>
     <div class="col-md-9">
+        <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            Drag and drop courses from the course list on the left to the corresponding course bucket on the right.
+        </div>
         <CourseBucket :list="introductory_courses" heading="Introductory Courses"></CourseBucket>
         <CourseBucket :list="foundation_courses" heading="Foundation Courses"></CourseBucket>
         <CourseBucket :list="advanced_courses" heading="Advanced Courses"></CourseBucket>
