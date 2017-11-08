@@ -7,17 +7,20 @@
 		</div>
 		<div id="collapseOne" class="panel-collapse collapse in">
 	  	<div class="panel-body">
-				<div v-for="course in list" class="course_label">
+				<drag v-for="course in list" :key="course.code" :class="{[course]: true}" :transferData="{ course, list }" class="course_label">
 					<span>{{course.code}} - {{course.name}}</span>
-				</div>
+				</drag>
 	  	</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import { Drag, Drop } from "vue-drag-drop";
+
 export default {
   name: "CourseList",
+  components: { Drag, Drop },
   props: ["list", "heading"],
   data() {
     return {};

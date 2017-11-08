@@ -55,12 +55,15 @@
 <script>
 import CourseList from "./components/CourseList";
 import CourseBucket from "./components/CourseBucket";
+import { Drag, Drop } from 'vue-drag-drop';
 
 export default {
   name: "app",
   components: {
     CourseList,
-    CourseBucket
+    CourseBucket,
+    Drag,
+    Drop
   },
   data() {
     return {
