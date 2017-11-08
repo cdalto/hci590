@@ -2,10 +2,10 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">
 	  	<h4 class="panel-title">
-				<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">{{heading}}</a>
+				<a data-toggle="collapse" data-parent="#accordion" :href="getPanelHref">{{heading}}</a>
 	  	</h4>
 		</div>
-		<div id="collapseOne" class="panel-collapse collapse in">
+		<div :id="getPanelId" class="panel-collapse collapse">
 	  	<div class="panel-body">
 				<div v-for="course in list" class="course_label">
 					<span>{{course.code}} - {{course.name}}</span>
@@ -19,8 +19,18 @@
 export default {
   name: "CourseList",
   props: ["list", "heading"],
+  computed: {
+  	getPanelId(){
+  		var panel_title = this.heading.replace(" ","");
+  		return panel_title;
+  	},
+  	getPanelHref(){
+  		var panel_link = this.heading.replace(" ","");
+  		return "#" + panel_link;
+  	}
+  },
   data() {
-    return {};
+    return {}
   }
 };
 </script>
