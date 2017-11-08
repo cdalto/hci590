@@ -2,22 +2,13 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">
 	  	<h4 class="panel-title">
-				<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Introductory</a>
+				<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">{{heading}}</a>
 	  	</h4>
 		</div>
 		<div id="collapseOne" class="panel-collapse collapse in">
 	  	<div class="panel-body">
-				<div class="course_label">
-					<span>IT 411 - Scripting for Interactive Systems</span>
-				</div>
-				<div class="course_label">
-					<span>HCI 406 - Website Design for HCI</span>
-				</div>
-				<div class="course_label">
-					<span>HCI 402 - Foundations of Digital Design</span>
-				</div>
-				<div class="course_label">
-					<span>IT 403 - Statistics and Data Analysis</span>
+				<div v-for="course in list" class="course_label">
+					<span>{{course.code}} - {{course.name}}</span>
 				</div>
 	  	</div>
 		</div>
@@ -27,6 +18,7 @@
 <script>
 export default {
   name: "CourseList",
+  props: ["list", "heading"],
   data() {
     return {};
   }
@@ -34,27 +26,25 @@ export default {
 </script>
 
 <style scoped>
-.panel
-{
-	border: 0.5px solid #efefef;
-	box-shadow:none;
+.panel {
+  border: 0.5px solid #efefef;
+  box-shadow: none;
 }
 .panel-group .panel,
 .panel {
   border-radius: 0px;
 }
-.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body
-{
-	border-top:0.5px solid #eee;
+.panel-group .panel-heading + .panel-collapse > .list-group,
+.panel-group .panel-heading + .panel-collapse > .panel-body {
+  border-top: 0.5px solid #eee;
 }
-.panel-default>.panel-heading+.panel-collapse>.panel-body {
-    border-top-color: #eee;
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #eee;
 }
-.panel-default>.panel-heading
-{
-	background-color: #f5f5f5;
-	background-image: none;
-	border-radius: 0px;
+.panel-default > .panel-heading {
+  background-color: #f5f5f5;
+  background-image: none;
+  border-radius: 0px;
 }
 .course_label {
   padding: 5px 10px;

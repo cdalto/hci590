@@ -33,11 +33,19 @@
 	<div class="container" id="coursePanel">
     <div class="col-md-3">
       <div class="panel-group" id="accordion">
-        <CourseList/>
+        <CourseList :list="introductory_courses" heading="Introductory Courses"></CourseList>
+        <CourseList :list="foundation_courses" heading="Foundation Courses"></CourseList>
+        <CourseList :list="advanced_courses" heading="Advanced Courses"></CourseList>
+        <CourseList :list="major_elective_courses" heading="Major Electives"></CourseList>
+        <CourseList :list="open_elective_courses" heading="Open Electives"></CourseList>
       </div>
     </div>
     <div class="col-md-9">
-      <CourseBucket/>
+        <CourseBucket :list="introductory_courses" heading="Introductory Courses"></CourseBucket>
+        <CourseBucket :list="foundation_courses" heading="Foundation Courses"></CourseBucket>
+        <CourseBucket :list="advanced_courses" heading="Advanced Courses"></CourseBucket>
+        <CourseBucket :list="major_elective_courses" heading="Major Electives"></CourseBucket>
+        <CourseBucket :list="open_elective_courses" heading="Open Electives"></CourseBucket>
     </div>
 	</div>
 </section>
@@ -257,195 +265,198 @@ export default {
         }
       ],
       open_elective_courses: [
-         {
-            id:24, 
-            name: "Information Security Management", 
-            code: "CNS 440", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], prereq: ["None"]
-         },
-         {
-            id:25, 
-            name: "Data Analysis and Regression", 
-            code: "CNS 423", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["IT 403"]
-         },
-         {
-            id:26, 
-            name: "Advanced Data Analysis", 
-            code: "CSC 424", type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["CSC 423"]
-         },
-         {
-            id:27, 
-            name: "Database Design", 
-            code: "CSC 451", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["None"]
-         },
-         {
-            id:28, 
-            name: "Data Visualization", 
-            code: "CSC 465", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["IT 403","IT 411"]
-         },
-         {
-            id:29, 
-            name: "Cognitive Science", 
-            code: "CSC 587", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["CSC 403","HCI 460"]
-         },
-         {
-            id:30, 
-            name: "E-Commerce Web Site Engineering", 
-            code: "ECT 455", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["IT 411","HCI 430"]
-         },
-         {
-            id:31, 
-            name: "Intranets and Portals", 
-            code: "ECT 480", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["ECT 424"]
-         },
-         {
-            id:32, 
-            name: "Customer Relationship Management Technologies", 
-            code: "ECT 586", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["ECT 424"]
-         },
-         {
-            id:33, 
-            name: "Game Design Workshop", 
-            code: "GAM 424", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["None"]
-         },
-         {
-            id:34, 
-            name: "Requirements Elicitation, Analysis, and Specification", 
-            code: "IS 485", type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["PM 430", "IS 422", "IS 430"]
-         },
-         {
-            id:35, 
-            name: "Social Issues of Computing", 
-            code: "IS 511", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["None"]
-         },
-         {
-            id:36, 
-            name: "Enterprise System Implementation", 
-            code: "IS 570", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["PM 430"]
-         }, 
-         {
-            id:37, 
-            name: "Web Architecture", 
-            code: "IT 432", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["IT 411"]
-         }, 
-         {
-            id:38, 
-            name: "Topics in Information Technology", 
-            code: "IT 590", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["None"]
-         }, 
-         {
-            id:39, 
-            name: "Decisions in Marketing Management", 
-            code: "MKT 555", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["None"]
-         },
-         {
-            id:40, 
-            name: "Fundamentals of IT Project Management", 
-            code: "PM 430", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["None"]
-         }, 
-         {
-            id:41, 
-            name: "Software and Systems Project Management", 
-            code: "SE 477", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["None"]
-         }, 
-         {
-            id:42, 
-            name: "Collaborative Technologies for Leading Projects", 
-            code: "PM 440", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["None"]
-         }, 
-         {
-            id:43, 
-            name: "Perception and Cognition", 
-            code: "PSY 404", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["None"]
-         }, 
-         {
-            id:44, 
-            name: "The Psychology of Judgment and Decision- Making", 
-            code: "PSY 473", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["None"]
-         }, 
-         {
-            id:45, 
-            name: "Industrial and Organizational Psychology", 
-            code: "PSY 473", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["None"]
-         }, 
-         {
-            id:46, 
-            name: "Object Oriented Modeling", 
-            code: "SE 430", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["None"]
-         },
-         {
-            id:47, 
-            name: "Requirements Engineering", 
-            code: "SE 482", 
-            type: "Open Elective", 
-            offered: ["Fall", "Winter", "Spring"], 
-            prereq: ["None"]
-         }, 
+        {
+          id: 24,
+          name: "Information Security Management",
+          code: "CNS 440",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["None"]
+        },
+        {
+          id: 25,
+          name: "Data Analysis and Regression",
+          code: "CNS 423",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["IT 403"]
+        },
+        {
+          id: 26,
+          name: "Advanced Data Analysis",
+          code: "CSC 424",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["CSC 423"]
+        },
+        {
+          id: 27,
+          name: "Database Design",
+          code: "CSC 451",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["None"]
+        },
+        {
+          id: 28,
+          name: "Data Visualization",
+          code: "CSC 465",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["IT 403", "IT 411"]
+        },
+        {
+          id: 29,
+          name: "Cognitive Science",
+          code: "CSC 587",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["CSC 403", "HCI 460"]
+        },
+        {
+          id: 30,
+          name: "E-Commerce Web Site Engineering",
+          code: "ECT 455",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["IT 411", "HCI 430"]
+        },
+        {
+          id: 31,
+          name: "Intranets and Portals",
+          code: "ECT 480",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["ECT 424"]
+        },
+        {
+          id: 32,
+          name: "Customer Relationship Management Technologies",
+          code: "ECT 586",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["ECT 424"]
+        },
+        {
+          id: 33,
+          name: "Game Design Workshop",
+          code: "GAM 424",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["None"]
+        },
+        {
+          id: 34,
+          name: "Requirements Elicitation, Analysis, and Specification",
+          code: "IS 485",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["PM 430", "IS 422", "IS 430"]
+        },
+        {
+          id: 35,
+          name: "Social Issues of Computing",
+          code: "IS 511",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["None"]
+        },
+        {
+          id: 36,
+          name: "Enterprise System Implementation",
+          code: "IS 570",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["PM 430"]
+        },
+        {
+          id: 37,
+          name: "Web Architecture",
+          code: "IT 432",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["IT 411"]
+        },
+        {
+          id: 38,
+          name: "Topics in Information Technology",
+          code: "IT 590",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["None"]
+        },
+        {
+          id: 39,
+          name: "Decisions in Marketing Management",
+          code: "MKT 555",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["None"]
+        },
+        {
+          id: 40,
+          name: "Fundamentals of IT Project Management",
+          code: "PM 430",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["None"]
+        },
+        {
+          id: 41,
+          name: "Software and Systems Project Management",
+          code: "SE 477",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["None"]
+        },
+        {
+          id: 42,
+          name: "Collaborative Technologies for Leading Projects",
+          code: "PM 440",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["None"]
+        },
+        {
+          id: 43,
+          name: "Perception and Cognition",
+          code: "PSY 404",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["None"]
+        },
+        {
+          id: 44,
+          name: "The Psychology of Judgment and Decision- Making",
+          code: "PSY 473",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["None"]
+        },
+        {
+          id: 45,
+          name: "Industrial and Organizational Psychology",
+          code: "PSY 473",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["None"]
+        },
+        {
+          id: 46,
+          name: "Object Oriented Modeling",
+          code: "SE 430",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["None"]
+        },
+        {
+          id: 47,
+          name: "Requirements Engineering",
+          code: "SE 482",
+          type: "Open Elective",
+          offered: ["Fall", "Winter", "Spring"],
+          prereq: ["None"]
+        }
       ]
     };
   }

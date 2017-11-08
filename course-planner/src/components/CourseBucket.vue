@@ -1,22 +1,10 @@
 <template>
 	<div class="bucket_wrapper">
 		<div class="course_bucket">
-			<div class="bucket_title">Introuductory Courses</div>
-			<div class="course_box col-md-2">
-				<div class="course_code">IT 411</div>
-				<div class="course_name">Scripting for Interactive Systems</div>
-			</div>
-			<div class="course_box col-md-2">
-				<div class="course_code">HCI 406</div>
-				<div class="course_name">Website Design for HCI</div>
-			</div>
-			<div class="course_box col-md-2">
-				<div class="course_code">HCI 402</div>
-				<div class="course_name">Foundations of Digital Design</div>
-			</div>
-			<div class="course_box col-md-2">
-				<div class="course_code">IT 403</div>
-				<div class="course_name">Statistics and Data Analysis</div>
+			<div class="bucket_title">{{heading}}</div>
+			<div v-for="course in list" class="course_box col-md-2">
+				<div class="course_code">{{course.code}}</div>
+				<div class="course_name">{{course.name}}</div>
 			</div>
 		</div>
 	</div>
@@ -24,7 +12,8 @@
 
 <script>
 export default {
-  name: "CourseBucket"
+  name: "CourseBucket",
+  props: ["list", "heading"]
 };
 </script>
 
