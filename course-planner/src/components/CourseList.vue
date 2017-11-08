@@ -2,10 +2,10 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">
 	  	<h4 class="panel-title">
-				<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">{{heading}}</a>
+				<a data-toggle="collapse" data-parent="#accordion" :href="getPanelHref">{{heading}}</a>
 	  	</h4>
 		</div>
-		<div id="collapseOne" class="panel-collapse collapse in">
+		<div :id="getPanelId" class="panel-collapse collapse">
 	  	<div class="panel-body">
 				<drag v-for="course in list" :key="course.code" :class="{[course]: true}" :transferData="{ course, list }" class="course_label">
 					<span>{{course.code}} - {{course.name}}</span>
@@ -22,8 +22,18 @@ export default {
   name: "CourseList",
   components: { Drag, Drop },
   props: ["list", "heading"],
+  computed: {
+  	getPanelId(){
+  		var panel_title = this.heading.replace(" ","");
+  		return panel_title;
+  	},
+  	getPanelHref(){
+  		var panel_link = this.heading.replace(" ","");
+  		return "#" + panel_link;
+  	}
+  },
   data() {
-    return {};
+    return {}
   }
 };
 </script>
