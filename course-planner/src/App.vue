@@ -150,7 +150,7 @@ export default {
         },
         {
           id: 9,
-          name: "IInteraction Design and Information Architecture",
+          name: "Interaction Design and Information Architecture",
           code: "HCI 454",
           type: "Advanced",
           offered: ["Fall", "Winter", "Spring"],
