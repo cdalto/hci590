@@ -3,11 +3,10 @@
     <div class="course_bucket">
       <div class="bucket_title">{{heading}}</div>
       <draggable v-model="list" @start="drag=true" @end="drag=false" :options="{group: getPanelId}" class="bucket_area">
-		   <div v-for="course in list" :key="course.code" class="course_box">{{course.name}}
-	  	 </div>
-      </draggable>
-	  </div>
-  </div>
+		  <div v-for="course in list" class="course_box"><strong>{{course.code}}</strong> - {{course.name}}
+	  	  </div>
+    </draggable>
+	</div>
 </template>
 
 <script>
@@ -48,6 +47,10 @@ export default {
   display: inline-block;
   padding: 15px;
   box-shadow: 10px 10px 15px #ccc;
+  color:#fff;
+  margin-bottom: 20px;
+  vertical-align: top;
+  height: 110px;
 }
 .bucket_title {
   color: #192f47;
