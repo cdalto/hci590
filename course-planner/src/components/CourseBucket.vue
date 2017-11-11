@@ -2,8 +2,8 @@
 	<div class="bucket_wrapper">
     <draggable v-model="list" @start="drag=true" @end="drag=false" class="course_bucket">
       <div class="bucket_title">{{heading}}</div>
-		  <div v-for="course in list" class="course_box">{{course.name}}
-	  	</div>
+		  <div v-for="course in list" class="course_box"><strong>{{course.code}}</strong> - {{course.name}}
+	  	  </div>
     </draggable>
 	</div>
 </template>
@@ -38,6 +38,10 @@ export default {
   display: inline-block;
   padding: 15px;
   box-shadow: 10px 10px 15px #ccc;
+  color:#fff;
+  margin-bottom: 20px;
+  vertical-align: top;
+  height: 110px;
 }
 .bucket_title {
   color: #192f47;
