@@ -1,7 +1,8 @@
 <template>
 	<div class="bucket_wrapper">
-    <draggable v-model="list" @start="drag=true" @end="drag=false" class="course_bucket">
+    <div class="course_bucket">
       <div class="bucket_title">{{heading}}</div>
+<<<<<<< HEAD
 		  <div v-for="course in list" class="course_box">
 		  <strong>{{course.code}}</strong> - {{course.name}}
 		  <span class="glyphicon glyphicon-info-sign pull-right" data-toggle="modal" data-target="#myModal"></span>
@@ -29,6 +30,14 @@
 		  </div> <!--Modal ends-->
     </draggable>
 	</div>
+=======
+      <draggable v-model="list" @start="drag=true" @end="drag=false" :options="{group: getPanelId}" class="bucket_area">
+		    <div v-for="course in list" :key="course.code" class="course_box"><strong>{{course.code}}</strong> - {{course.name}}
+	  	  </div>
+      </draggable>
+	  </div>
+  </div>
+>>>>>>> ea25f5af739caa69f6859d37d5a59a998600964e
 </template>
 
 <script>
@@ -38,11 +47,19 @@ export default {
   name: "CourseBucket",
   components: { draggable },
   props: ["list", "heading"],
-  methods: {}
+  computed: {
+    getPanelId() {
+      var panel_title = this.heading.replace(" ", "");
+      return panel_title;
+    }
+  }
 };
 </script>
 
 <style scoped>
+.bucket_area {
+  min-height: 10px;
+}
 .bucket_wrapper {
   overflow: auto;
 }
@@ -61,7 +78,7 @@ export default {
   display: inline-block;
   padding: 15px;
   box-shadow: 10px 10px 15px #ccc;
-  color:#fff;
+  color: #fff;
   margin-bottom: 20px;
   vertical-align: top;
   height: 110px;

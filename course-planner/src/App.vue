@@ -45,11 +45,11 @@
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             Drag and drop courses from the course list on the left to the corresponding course bucket on the right.
         </div>
-        <CourseBucket :list="introductory_courses" heading="Introductory Courses"></CourseBucket>
-        <CourseBucket :list="foundation_courses" heading="Foundation Courses"></CourseBucket>
-        <CourseBucket :list="advanced_courses" heading="Advanced Courses"></CourseBucket>
-        <CourseBucket :list="major_elective_courses" heading="Major Electives"></CourseBucket>
-        <CourseBucket :list="open_elective_courses" heading="Open Electives"></CourseBucket>
+        <CourseBucket :list="introductory_courses_bucket" heading="Introductory Courses"></CourseBucket>
+        <CourseBucket :list="foundation_courses_bucket" heading="Foundation Courses"></CourseBucket>
+        <CourseBucket :list="advanced_courses_bucket" heading="Advanced Courses"></CourseBucket>
+        <CourseBucket :list="major_elective_courses_bucket" heading="Major Electives"></CourseBucket>
+        <CourseBucket :list="open_elective_courses_bucket" heading="Open Electives"></CourseBucket>
     </div>
 	</div>
 </section>
@@ -59,7 +59,7 @@
 <script>
 import CourseList from "./components/CourseList";
 import CourseBucket from "./components/CourseBucket";
-import { Drag, Drop } from 'vue-drag-drop';
+import { Drag, Drop } from "vue-drag-drop";
 
 export default {
   name: "app",
@@ -512,7 +512,12 @@ export default {
           prereq: ["None"],
           description: "Requirements Engineering (RE) plays a critical role in the software development process. This course will introduce related vocabulary, concepts, and techniques, and will examine the role of RE in software and systems engineering. The course will cover topics related to eliciting, validating, negotiating, analyzing, specifying, and managing requirements. Popular RE tools will also be introduced."
         }
-      ]
+      ],
+      introductory_courses_bucket: [],
+      foundation_courses_bucket: [],
+      advanced_courses_bucket: [],
+      major_elective_courses_bucket: [],
+      open_elective_courses_bucket: []
     };
   }
 };
