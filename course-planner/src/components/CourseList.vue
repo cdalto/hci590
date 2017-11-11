@@ -7,7 +7,7 @@
 		</div>
 		<div :id="getPanelId" class="panel-collapse collapse">
 	  	<div class="panel-body">
-				<draggable v-model="list" @start="drag=true" @end="drag=false">
+				<draggable v-model="list" @start="drag=true" @end="drag=false" :options="{group: getPanelId}">
 					<div v-for="course in list" :key="course.code" class="course_label">
 						<span>{{course.code}} - {{course.name}}</span>
 					</div>

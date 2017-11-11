@@ -1,11 +1,13 @@
 <template>
 	<div class="bucket_wrapper">
-    <draggable v-model="list" @start="drag=true" @end="drag=false" class="course_bucket">
+    <div class="course_bucket">
       <div class="bucket_title">{{heading}}</div>
-		  <div v-for="course in list" class="course_box">{{course.name}}
-	  	</div>
-    </draggable>
-	</div>
+      <draggable v-model="list" @start="drag=true" @end="drag=false" :options="{group: getPanelId}" class="bucket_area">
+		   <div v-for="course in list" :key="course.code" class="course_box">{{course.name}}
+	  	 </div>
+      </draggable>
+	  </div>
+  </div>
 </template>
 
 <script>
@@ -15,11 +17,19 @@ export default {
   name: "CourseBucket",
   components: { draggable },
   props: ["list", "heading"],
-  methods: {}
+  computed: {
+    getPanelId() {
+      var panel_title = this.heading.replace(" ", "");
+      return panel_title;
+    }
+  }
 };
 </script>
 
 <style scoped>
+.bucket_area {
+  min-height: 10px;
+}
 .bucket_wrapper {
   overflow: auto;
 }
