@@ -1,35 +1,35 @@
 <template>
 	<div class="bucket_wrapper">
-    <div class="course_bucket">
-      <div class="bucket_title">{{heading}}</div>
-      	<draggable v-model="list" @start="drag=true" @end="drag=false" :options="{group: getPanelId}" class="bucket_area">
-			  <div v-for="course in list" class="course_box">
-				  <strong>{{course.code}}</strong> - {{course.name}}
-				  <span class="glyphicon glyphicon-info-sign pull-right" data-toggle="modal" data-target="#myModal"></span>
-		  	  </div>
-		  	  <div class="modal fade" id="myModal">
-		  		<div class="modal-dialog">
-					<div class="modal-content">
-						  <div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true" v-on:click.prevent="remove_course_details">&times;</button>
-								<h4 class="modal-title">Course Details</h4>
-						  </div>
-						  <div class="modal-body info_box" v-for="obj in CourseList">
-					  			<span>#{{obj.id}}</span><br/>
-						  		<strong>Course code: </strong><span>{{obj.code}}</span><br/>
-						  		<strong>Course name: </strong><span>{{obj.course}}</span><br/>
-						  		<strong>Course type: </strong><span>{{obj.type}}</span><br/>
-						  		<strong class="highlight">Offered in: </strong><span v-for="quarter in obj.offered"><span><br/>{{ quarter }}</span></span><br/>
-						  		<strong class="highlight">Prerequisites: </strong><span v-for="prerequisite in obj.prereq"><span></br/>{{ prerequisite }}</span></span>
-						  </div>
-						  <div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						  </div>
-					</div>
-		  		</div>
-			  </div> <!--Modal ends-->
-    	</draggable>
-	</div>
+	    <div class="course_bucket">
+	      <div class="bucket_title">{{heading}}</div>
+	      	<draggable v-model="list" @start="drag=true" @end="drag=false" :options="{group: getPanelId}" class="bucket_area">
+				  <div v-for="course in list" class="course_box">
+					  <strong>{{course.code}}</strong> - {{course.name}}
+					  <span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#ModalWindow"></span>
+					  <div class="modal fade" id="ModalWindow">
+				  			<div class="modal-dialog">
+								<div class="modal-content">
+									  <div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											<h4 class="modal-title">Course Details</h4>
+									  </div>
+									  <div class="modal-body info_box">
+								  			<strong class="highlight">Code: </strong><span class="highlight">{{course.code}}</span><br/>
+									  		<strong class="highlight">Name: </strong><span class="highlight">{{course.name}}</span><br/>
+									  		<strong class="highlight">Type: </strong><span class="highlight">{{course.type}}</span><br/>
+									  		<strong class="highlight">Description: </strong><span class="highlight">{{course.description}}</span><br/>
+									  		<strong class="highlight">Offered in: </strong><span class="highlight" v-for="quarter in course.offered"><span><br/>{{ quarter }}</span></span><br/>
+									  		<strong class="highlight">Prerequisites: </strong><span class="highlight" v-for="prerequisite in course.prereq"><span></br/>{{ prerequisite }}</span></span>
+									  </div>
+									  <div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									  </div>
+								</div>
+				  			</div>
+				 	  </div> <!--Modal ends-->
+			  	  </div>	  
+	    	</draggable>
+		</div>
 	</div>
 </template>
 
@@ -44,6 +44,14 @@ export default {
     getPanelId() {
       var panel_title = this.heading.replace(" ", "");
       return panel_title;
+    },
+    getCourseCodeasId(){
+    	var course_code=this.code.replace(" ","");
+    	return course_code;
+    },
+    getCourseCodeasTarget(){
+    	var course_target=this.code.replace(" ","");
+    	return "#" + course_target;
     }
   }
 };
@@ -95,9 +103,28 @@ export default {
 }
 .glyphicon-info-sign
 {
-	top: 48px;
-    left: 4px;
+	position: relative;
+	top: 4px;
+    left: 3px;
     font-size: 16px;
     cursor: pointer;
+}
+.modal-header
+{
+	background-color: #90a9c7;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+.modal-header .close {
+    color: #ffffff;
+    opacity: 1.0;
+}
+.info_box
+{
+	border-bottom:1px solid #cfcfcf;
+}
+.highlight
+{
+	color:brown;
 }
 </style>
