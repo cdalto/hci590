@@ -2,8 +2,31 @@
 	<div class="bucket_wrapper">
     <draggable v-model="list" @start="drag=true" @end="drag=false" class="course_bucket">
       <div class="bucket_title">{{heading}}</div>
-		  <div v-for="course in list" class="course_box"><strong>{{course.code}}</strong> - {{course.name}}
+		  <div v-for="course in list" class="course_box">
+		  <strong>{{course.code}}</strong> - {{course.name}}
+		  <span class="glyphicon glyphicon-info-sign pull-right" data-toggle="modal" data-target="#myModal"></span>
 	  	  </div>
+	  	  <div class="modal fade" id="myModal">
+	  		<div class="modal-dialog">
+				<div class="modal-content">
+					  <div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true" v-on:click.prevent="remove_course_details">&times;</button>
+							<h4 class="modal-title">Course Details</h4>
+					  </div>
+					  <div class="modal-body info_box" v-for="obj in CourseList">
+				  			<span>#{{obj.id}}</span><br/>
+					  		<strong>Course code: </strong><span>{{obj.code}}</span><br/>
+					  		<strong>Course name: </strong><span>{{obj.course}}</span><br/>
+					  		<strong>Course type: </strong><span>{{obj.type}}</span><br/>
+					  		<strong class="highlight">Offered in: </strong><span v-for="quarter in obj.offered"><span><br/>{{ quarter }}</span></span><br/>
+					  		<strong class="highlight">Prerequisites: </strong><span v-for="prerequisite in obj.prereq"><span></br/>{{ prerequisite }}</span></span>
+					  </div>
+					  <div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					  </div>
+				</div>
+	  		</div>
+		  </div> <!--Modal ends-->
     </draggable>
 	</div>
 </template>
@@ -59,5 +82,12 @@ export default {
   color: #ffffff;
   text-align: center;
   font-size: 16px;
+}
+.glyphicon-info-sign
+{
+	top: 48px;
+    left: 4px;
+    font-size: 16px;
+    cursor: pointer;
 }
 </style>
