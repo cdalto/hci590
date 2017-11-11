@@ -7,33 +7,35 @@
 		</div>
 		<div :id="getPanelId" class="panel-collapse collapse">
 	  	<div class="panel-body">
-				<drag v-for="course in list" :key="course.code" :class="{[course]: true}" :transferData="{ course, list }" class="course_label">
-					<span>{{course.code}} - {{course.name}}</span>
-				</drag>
+				<draggable v-model="list" @start="drag=true" @end="drag=false">
+					<div v-for="course in list" :key="course.code" class="course_label">
+						<span>{{course.code}} - {{course.name}}</span>
+					</div>
+				</draggable>
 	  	</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import { Drag, Drop } from "vue-drag-drop";
+import draggable from "vuedraggable";
 
 export default {
   name: "CourseList",
-  components: { Drag, Drop },
+  components: { draggable },
   props: ["list", "heading"],
   computed: {
-  	getPanelId(){
-  		var panel_title = this.heading.replace(" ","");
-  		return panel_title;
-  	},
-  	getPanelHref(){
-  		var panel_link = this.heading.replace(" ","");
-  		return "#" + panel_link;
-  	}
+    getPanelId() {
+      var panel_title = this.heading.replace(" ", "");
+      return panel_title;
+    },
+    getPanelHref() {
+      var panel_link = this.heading.replace(" ", "");
+      return "#" + panel_link;
+    }
   },
   data() {
-    return {}
+    return {};
   }
 };
 </script>
@@ -67,8 +69,8 @@ export default {
   margin-bottom: 10px;
   box-shadow: 5px 5px 10px #ccc;
 }
-.glyphicon-chevron-down, .glyphicon-chevron-right
-{
-	margin-right:5px;
+.glyphicon-chevron-down,
+.glyphicon-chevron-right {
+  margin-right: 5px;
 }
 </style>

@@ -1,28 +1,21 @@
 <template>
 	<div class="bucket_wrapper">
-		<drop class="course_bucket" @drop="handleDrop(list, ...arguments)">
-			<div class="bucket_title">{{heading}}</div>
-		</drop>
+    <draggable v-model="list" @start="drag=true" @end="drag=false" class="course_bucket">
+      <div class="bucket_title">{{heading}}</div>
+		  <div v-for="course in list" class="course_box">{{course.name}}
+	  	</div>
+    </draggable>
 	</div>
 </template>
 
 <script>
-import { Drag, Drop } from "vue-drag-drop";
+import draggable from "vuedraggable";
 
 export default {
   name: "CourseBucket",
-  components: { Drag, Drop },
+  components: { draggable },
   props: ["list", "heading"],
-  methods: {
-    handleDrop(toList, data) {
-      const fromList = data.list;
-      if (fromList) {
-        toList.push(data.item);
-        fromList.splice(fromList.indexOf(data.item), 1);
-        toList.sort((a, b) => a > b);
-      }
-    }
-  }
+  methods: {}
 };
 </script>
 
