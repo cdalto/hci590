@@ -27,7 +27,7 @@
 								</div>
 				  			</div>
 				 	  </div> <!--Modal ends-->
-			  	  </div>	  
+			  	  </div>
 	    	</draggable>
 		</div>
 	</div>
@@ -45,13 +45,13 @@ export default {
       var panel_title = this.heading.replace(" ", "");
       return panel_title;
     },
-    getCourseCodeasId(){
-    	var course_code=this.code.replace(" ","");
-    	return course_code;
+    getCourseCodeasId() {
+      var course_code = this.code.replace(" ", "");
+      return course_code;
     },
-    getCourseCodeasTarget(){
-    	var course_target=this.code.replace(" ","");
-    	return "#" + course_target;
+    getCourseCodeasTarget() {
+      var course_target = this.code.replace(" ", "");
+      return "#" + course_target;
     }
   }
 };
@@ -59,7 +59,9 @@ export default {
 
 <style scoped>
 .bucket_area {
-  min-height: 10px;
+  min-height: 150px;
+  border-style: dashed;
+  border-width: 2px;
 }
 .bucket_wrapper {
   overflow: auto;
@@ -101,30 +103,26 @@ export default {
   text-align: center;
   font-size: 16px;
 }
-.glyphicon-info-sign
-{
-	position: relative;
-	top: 4px;
-    left: 3px;
-    font-size: 16px;
-    cursor: pointer;
+.glyphicon-info-sign {
+  position: relative;
+  top: 4px;
+  left: 3px;
+  font-size: 16px;
+  cursor: pointer;
 }
-.modal-header
-{
-	background-color: #90a9c7;
-    border-top-right-radius: 4px;
-    border-top-left-radius: 4px;
+.modal-header {
+  background-color: #90a9c7;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
 }
 .modal-header .close {
-    color: #ffffff;
-    opacity: 1.0;
+  color: #ffffff;
+  opacity: 1;
 }
-.info_box
-{
-	border-bottom:1px solid #cfcfcf;
+.info_box {
+  border-bottom: 1px solid #cfcfcf;
 }
-.highlight
-{
-	color:brown;
+.highlight {
+  color: brown;
 }
 </style>

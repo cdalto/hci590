@@ -7,7 +7,7 @@
 		</div>
 		<div :id="getPanelId" class="panel-collapse collapse">
 	  	<div class="panel-body">
-				<draggable v-model="list" @start="drag=true" @end="drag=false" :options="{group: getPanelId}">
+				<draggable v-model="list" @start="drag=true" @end="drag=false" :options="{group: getPanelId}" class="course_list_area">
 					<div v-for="course in list" :key="course.code" class="course_label">
 						<span>{{course.code}} - {{course.name}}</span>
 					</div>
@@ -60,6 +60,9 @@ export default {
   background-color: #f5f5f5;
   background-image: none;
   border-radius: 0px;
+}
+.course_list_area {
+  min-height: 10px;
 }
 .course_label {
   padding: 5px 10px;
