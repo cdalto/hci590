@@ -5,8 +5,8 @@
 	      	<draggable v-model="list" @start="drag=true" @end="drag=false" :options="{group: getPanelId}" class="bucket_area">
 				  <div v-for="course in list" class="course_box">
 					  <strong>{{course.code}}</strong> - {{course.name}}
-					  <span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#ModalWindow"></span>
-					  <div class="modal fade" id="ModalWindow">
+					  <span class="glyphicon glyphicon-info-sign" data-toggle="modal" v-bind:data-target="['#course'+course.id]"></span>
+					  <div class="modal fade" :id="'course' + course.id">
 				  			<div class="modal-dialog">
 								<div class="modal-content">
 									  <div class="modal-header">
@@ -44,14 +44,6 @@ export default {
     getPanelId() {
       var panel_title = this.heading.replace(" ", "");
       return panel_title;
-    },
-    getCourseCodeasId() {
-      var course_code = this.code.replace(" ", "");
-      return course_code;
-    },
-    getCourseCodeasTarget() {
-      var course_target = this.code.replace(" ", "");
-      return "#" + course_target;
     }
   }
 };
