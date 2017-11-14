@@ -2,7 +2,7 @@
 	<div class="bucket_wrapper">
 	    <div class="course_bucket">
 	      <div class="bucket_title">{{heading}}</div>
-	      	<draggable v-model="list" @start="drag=true" @end="drag=false" :options="{group: getPanelId}" class="bucket_area">
+	      	<draggable v-model="list" @start="drag=true" @end="$emit('update:list', $event.target.value)" :options="{group: getPanelId}" class="bucket_area">
 				  <div v-for="course in list" class="course_box">
 					  <strong>{{course.code}}</strong> - {{course.name}}
 					  <span class="glyphicon glyphicon-info-sign" data-toggle="modal" v-bind:data-target="['#course'+course.id]"></span>
