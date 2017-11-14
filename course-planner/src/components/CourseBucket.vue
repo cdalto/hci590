@@ -22,7 +22,7 @@
 									  		<strong class="highlight">Prerequisites: </strong><span class="highlight" v-for="prerequisite in course.prereq"><span></br/>{{ prerequisite }}</span></span>
 									  </div>
 									  <div class="modal-footer">
-											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-default close_modal" data-dismiss="modal">Close</button>
 									  </div>
 								</div>
 				  			</div>
@@ -118,6 +118,13 @@ export default {
   border-bottom: 1px solid #cfcfcf;
 }
 .highlight {
-  color: brown;
+  color: #333;
+}
+.close_modal
+{
+	background:#90a9c7;
+	color:#fff;
+	text-shadow: none;
+	border-style: none;
 }
 </style>
