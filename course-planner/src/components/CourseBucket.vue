@@ -2,7 +2,7 @@
 	<div class="bucket_wrapper">
 	    <div class="course_bucket">
 	      <div class="bucket_title">{{heading}}</div>
-	      	<draggable v-model="list" @start="drag=true" @end="drag=false" :options="{group: getPanelId}" class="bucket_area">
+	      	<draggable v-model="list" @start="drag=true" @end="drag=false" :options="{group: getPanelId}" class="drop_area">
 				  <div v-for="course in list" class="course_box">
 					  <strong>{{course.code}}</strong> - {{course.name}}
 					  <span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#ModalWindow"></span>
@@ -58,10 +58,13 @@ export default {
 </script>
 
 <style scoped>
-.bucket_area {
+.drop_area {
   min-height: 150px;
-  border-style: dashed;
-  border-width: 2px;
+  border: 1px dashed #ccc;
+  padding-top:20px;
+  padding-left:20px;
+  padding-right:20px;
+  padding-bottom:0px;
 }
 .bucket_wrapper {
   overflow: auto;
